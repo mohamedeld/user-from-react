@@ -1,11 +1,11 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export const UserList = (props) => {
-  const history = useHistory();
+  const navigate = useNavigate();
   return (
     <>
       UserList
-      <button onClick={() => history.push("/")}>Home</button>
+      <button onClick={() => navigate("/")}>Home</button>
     </>
   );
 };
