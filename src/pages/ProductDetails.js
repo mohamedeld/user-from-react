@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import axiosInstance from "../network/axiosInstance";
 export const ProductDetails = () => {
   const [pDetail, setPDetail] = useState({});
   const params = useParams();
   const navigate = useNavigate();
   useEffect(() => {
-    axios
-      .get(`https://fakestoreapi.com/products/${params.id}`)
+    axiosInstance
+      .get(`/products/${params.id}`)
       .then((res) => setPDetail(res.data))
       .catch((err) => console.log(err));
   }, []);

@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { ProductCard } from "../components/ProductCard";
 import axios from "axios";
+import axiosInstance from "../network/axiosInstance";
 export const Products = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://fakestoreapi.com/products")
+    axiosInstance
+      .get("/products", {
+        params: {
+          limit: 5,
+        },
+      })
       .then((res) => setProducts(res.data))
       .catch((err) => console.log(err));
   }, []);
