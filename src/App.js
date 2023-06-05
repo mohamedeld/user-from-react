@@ -5,6 +5,8 @@ import { AddUser } from "./pages/AddUser";
 import { UserList } from "./pages/UserList";
 import { Navbar } from "./components/Navbar";
 import { NotFound } from "./pages/NotFound";
+import { Products } from "./pages/Products";
+import { ProductDetails } from "./pages/ProductDetails";
 const App = () => {
   return (
     <>
@@ -13,6 +15,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/add-user" element={<AddUser />} />
         <Route path="/users" element={<UserList />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="products/:id" element={<ProductDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
